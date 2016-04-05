@@ -23,6 +23,32 @@ defmodule Countries do
     end)
   end
   
+  @doc """
+  Filters countries by :alpha3
+  Returns alpha2 country code for given alpha3 country code
+
+  ## Examples
+    iex> Countries.alpha3_to_alpha2("DEU")
+    "DE"
+  """
+  def alpha3_to_alpha2(value) do
+    country = filter_by(:alpha3, value) |> List.first
+    country.alpha2
+  end
+  
+  @doc """
+  Filters countries by :alpha2
+  Returns alpha3 country code for given alpha2 country code
+
+  ## Examples
+    iex> Countries.alpha2_to_alpha3("DE")
+    "DEU"
+  """
+  def alpha2_to_alpha3(value) do
+    country = filter_by(:alpha2, value) |> List.first
+    country.alpha3
+  end
+  
   #-- Load countries from yaml files once on compile time ---
   
   # Ensure :yamerl is running
