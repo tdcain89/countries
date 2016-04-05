@@ -23,11 +23,11 @@ defmodule CountriesTest do
   
   test "conversion from alpha2 to alpha3" do
     alpha3 = Countries.alpha2_to_alpha3("DE")
-    assert alpha3 == 'DEU'
+    assert alpha3 == "DEU"
   end
   
   test "conversion from alpha2 to alpha3" do
     alpha2 = Countries.alpha3_to_alpha2("DEU")
-    assert alpha2 == 'DE'
+    assert alpha2 == "DE"
   end
 end

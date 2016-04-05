@@ -33,7 +33,7 @@ defmodule Countries do
   """
   def alpha3_to_alpha2(value) do
     country = filter_by(:alpha3, value) |> List.first
-    country.alpha2
+    country.alpha2 |> List.to_string
   end
   
   @doc """
@@ -46,7 +46,7 @@ defmodule Countries do
   """
   def alpha2_to_alpha3(value) do
     country = filter_by(:alpha2, value) |> List.first
-    country.alpha3
+    country.alpha3 |> List.to_string
   end
   
   #-- Load countries from yaml files once on compile time ---
